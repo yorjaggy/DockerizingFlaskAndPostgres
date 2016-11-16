@@ -1,0 +1,9 @@
+<h3>Palabras guardadas</h3>
+    <table>
+    {%- for word in words %}
+        <tr>
+            <td>{{ word.id }}</td>
+            <td>{{ word.word }}</td>
+        </tr>
+    {%- endfor %}
+</table>

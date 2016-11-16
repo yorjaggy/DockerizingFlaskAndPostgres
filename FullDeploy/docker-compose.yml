@@ -1,6 +1,0 @@
-ubuntu_web:
-  image: ubuntu_mod
-  ports:
-    - "8080:80"
-  volumes:
-    - ./html:/var/www/html

@@ -1,0 +1,14 @@
+version: '2'
+services:
+  flask:
+    image: iflask
+    ports:
+      - "5000:5000"
+    links:
+      - postgres
+    depends_on:
+      - postgres
+  postgres:
+    image: pgsql_parcial
+
+  
