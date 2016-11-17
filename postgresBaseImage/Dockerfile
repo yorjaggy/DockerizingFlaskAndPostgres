@@ -1,11 +1,10 @@
 #
 # example Dockerfile for https://docs.docker.com/examples/postgresql_service/
 #
-FROM yorjaggy/ubuntupdated
-#MAINTAINER SvenDowideit@docker.com
+FROM ubuntuactualidadreporemoto
+MAINTAINER SvenDowideit@docker.com
 
 RUN apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys B97B0AFCAA1A47F044F244A07FCC7D46ACCC4CF8
-
 
 RUN echo "deb http://apt.postgresql.org/pub/repos/apt/ precise-pgdg main" > /etc/apt/sources.list.d/pgdg.list
 

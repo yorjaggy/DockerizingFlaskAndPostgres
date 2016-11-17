@@ -1,7 +1,7 @@
 version: '2'
 services:
   flask:
-    image: iflask:latest
+    image: flaskmachine:latest
     ports:
       - "5000:5000"
     links:
@@ -9,7 +9,7 @@ services:
     depends_on:
       - postgres
   postgres:
-    image: pgsql_parcial:latest
+    image: postgresmachine:latest
     ports:
       - "5432:5432"
 
