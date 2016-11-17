@@ -5,7 +5,7 @@ import os
 #from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://docker:docker@192.168.160.128:5432/docker'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://docker:docker@192.168.160.129:5432/docker'
 db = SQLAlchemy(app)
 
 if db is None:
