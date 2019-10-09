@@ -1,10 +1,10 @@
-FROM ubuntuactualidadreporemoto
-MAINTAINER Yor Jaggy <jhorshaggy7_2@hotmail.com>
-#Instalando python y pip
-USER root
-RUN apt-get update && apt-get install -y python python-pip python-dev libpq-dev
-#Instalando dependencias para la conexion con la base de datos en postgres
-RUN apt-get install python-psycopg2 -y
+FROM python:3.7-alpine
+
+RUN apk update && \
+    apk add --virtual build-deps gcc python-dev musl-dev && \
+    apk add postgresql-dev
+RUN pip install psycopg2
+
 ADD restFlaskApp /restFlaskApp
 WORKDIR /restFlaskApp
 RUN pip install -r requirements.txt

@@ -1,16 +1,26 @@
-version: '2'
+version: '3'
 services:
   flask:
-    image: flaskmachine:latest
+    image: poc_python_flask
     ports:
       - "5000:5000"
-    links:
-      - postgres
     depends_on:
-      - postgres
-  postgres:
-    image: postgresmachine:latest
+      - db_pg
+  
+  db_pg:
+    image: postgres
+    restart: always
     ports:
-      - "5432:5432"
+      - "5432"
+    environment:
+      POSTGRES_USER: username
+      POSTGRES_PASSWORD: userpass
+      POSTGRES_DB: testdb
+      
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 4343:8080
 
   
