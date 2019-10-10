@@ -1,4 +1,4 @@
-# DockerizingFlaskAndPostgres
+# docker_flask_postgres
 
 ![alt tag](https://github.com/yorjaggy/VagrantParcial1Sisdistri/blob/master/images/1.png)
 
