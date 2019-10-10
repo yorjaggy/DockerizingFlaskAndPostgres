@@ -2,6 +2,8 @@
 
 ![alt tag](https://github.com/yorjaggy/VagrantParcial1Sisdistri/blob/master/images/1.png)
 
+drone_2
+
 In this exercise we use docker for provide a environmnt like the showed in the imagen 1: A ubuntu machine with a microframework and a database in postgres. 
 
 The version of docker used for this exercise is 1.12.3 (as showed in the image), the docker image used was the ubuntu:14.04 and the host machine was a ubuntu 14.04 with the next specifications. 
