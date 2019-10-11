@@ -9,7 +9,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://username:userpass@db_pg:54
 db = SQLAlchemy(app)
 
 if db is None:
-	@app.route('/')
+	@app.route('/words/')
 	def index():
 	    return "DB not found!"
 else:
@@ -22,19 +22,19 @@ else:
 	#--------------------------------------------------------------------
 	db.create_all()
 
-	@app.route('/')
+	@app.route('/words/')
 	def index():
 	    words=Word.query.all()
 	    return render_template('list.html',words=Word.query.all())
 
-	@app.route('/test')
-	def test():
-	    toAdd = Word(word=u'Mi Primera Palabra') 
-	    db.session.add(toAdd)
-	    db.session.commit()
-	    return toAdd.word + " agregada."
+	# @app.route('/words')
+	# def test():
+	#     toAdd = Word(word=u'Mi Primera Palabra') 
+	#     db.session.add(toAdd)
+	#     db.session.commit()
+	#     return toAdd.word + " agregada."
 
-	@app.route('/<palabra>')
+	@app.route('/words/<palabra>')
 	def addingWord(palabra):
 	    toAdd = Word(word=palabra)
 	    db.session.add(toAdd)

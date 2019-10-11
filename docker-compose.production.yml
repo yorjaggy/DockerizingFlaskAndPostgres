@@ -1,0 +1,42 @@
+version: '3.3'
+services:
+  poc_flask:
+    image: i2thub.icesi.edu.co:5000/python_flask_test:latest
+    ports:
+      - "5000:5000"
+    depends_on:
+      - pocdbpg
+    networks:
+      - proxy
+    deploy:
+      replicas: 1
+      labels: 
+        com.df.distribute: "true"
+        com.df.notify: "true"
+        com.df.port: 5000
+        com.df.servicePath: "/words/"
+  
+  pocdbpg:
+    image: i2thub.icesi.edu.co:5000/postgres:11.3
+    restart: always
+    networks:
+      - proxy
+    ports:
+      - "5432"
+    environment:
+      POSTGRES_USER: username
+      POSTGRES_PASSWORD: userpass
+      POSTGRES_DB: testdb
+      
+  # adminer:
+  #   image: adminer
+  #   restart: always
+  #   ports:
+  #     - 7251:8080
+  #   networks:
+  #     - proxy
+
+networks: 
+  proxy: 
+    external: true
+
