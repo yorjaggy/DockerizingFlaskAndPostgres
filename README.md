@@ -1,6 +1,8 @@
-# DockerizingFlaskAndPostgres
+# docker_flask_postgres
 
 ![alt tag](https://github.com/yorjaggy/VagrantParcial1Sisdistri/blob/master/images/1.png)
+
+drone_2
 
 In this exercise we use docker for provide a environmnt like the showed in the imagen 1: A ubuntu machine with a microframework and a database in postgres. 
 
