@@ -1,4 +1,4 @@
-kind: pipeline_test2
+kind: pipeline_test3
 name: greeting
 
 steps:
