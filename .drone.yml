@@ -1,5 +1,5 @@
-kind: pipeline_test4
-name: greeting
+kind: pipeline_test5
+name: greeting5
 
 steps:
 - name: en
