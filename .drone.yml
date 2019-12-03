@@ -12,7 +12,7 @@ steps:
   image: plugins/docker
   settings:
     registry: i2thub.icesi.edu.co:5000
-    dockerfile: ./flaskBaseImage
+    dockerfile: ./flaskBaseImage/Dockerfile
     repo: ${DRONE_REPO,,}
     tags:
     - ${DRONE_SOURCE_BRANCH/\//-}
