@@ -23,8 +23,8 @@ steps:
 - name: build-push-docker
   image: plugins/docker
   settings:
+    registry: i2thub.icesi.edu.co:5000
     repo: ${DRONE_REPO,,}
 	tags:
-  - ${DRONE_SOURCE_BRANCH/\//-}
-  - ${DRONE_SOURCE_BRANCH/\//-}-${DRONE_COMMIT_SHA:0:8}
-  registry: i2thub.icesi.edu.co:5000
+	- ${DRONE_SOURCE_BRANCH/\//-}
+	- ${DRONE_SOURCE_BRANCH/\//-}-${DRONE_COMMIT_SHA:0:8}
