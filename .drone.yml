@@ -14,7 +14,9 @@ steps:
     registry: i2thub.icesi.edu.co:5000
     dockerfile: ./flaskBaseImage/Dockerfile
     repo: ${DRONE_REPO,,}
+    context: ./flaskBaseImage
     tags:
     - ${DRONE_SOURCE_BRANCH/\//-}
     - ${DRONE_SOURCE_BRANCH/\//-}-${DRONE_COMMIT_SHA:0:8}
+    
   
