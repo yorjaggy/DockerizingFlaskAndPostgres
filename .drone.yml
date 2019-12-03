@@ -2,10 +2,19 @@ kind: pipeline
 name: clone-build-push-release
 
 steps:
-- name: en
+- name: test
   image: alpine
   commands:
   - pwd
   - ls -l
-
-
+  
+- name: build-push-docker
+  image: plugins/docker
+  settings:
+    registry: i2thub.icesi.edu.co:5000
+    dockerfile: ./flaskBaseImage
+    repo: ${DRONE_REPO,,}
+    tags:
+    - ${DRONE_SOURCE_BRANCH/\//-}
+    - ${DRONE_SOURCE_BRANCH/\//-}-${DRONE_COMMIT_SHA:0:8}
+  
