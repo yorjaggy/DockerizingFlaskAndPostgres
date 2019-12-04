@@ -12,11 +12,16 @@ steps:
   image: plugins/docker
   settings:
     registry: i2thub.icesi.edu.co:5000
-    dockerfile: ./flaskBaseImage/Dockerfile
-    repo: ${DRONE_REPO,,}
     context: ./flaskBaseImage
+    dockerfile: ./flaskBaseImage/Dockerfile
+    repo: python_flask_test
     tags:
-    - ${DRONE_SOURCE_BRANCH/\//-}
-    - ${DRONE_SOURCE_BRANCH/\//-}-${DRONE_COMMIT_SHA:0:8}
+    - ${DRONE_COMMIT_BRANCH/\//-}
+    - ${DRONE_COMMIT_BRANCH/\//-}-${DRONE_COMMIT_SHA:0:8}
     
-  
+  #- name: execute-webhook-portainer
+  #  image: alpine
+    #commands: #ubicar esta url como secret?
+    #- apk add curl
+    #- curl -X POST https://i2thub.icesi.edu.co:5443/api/webhooks/a5b9d67f-204d-47de-9cfb-729871ff524d
+    #- curl -X POST https://i2thub.icesi.edu.co:5443/portainer/api/webhooks/a5b9d67f-204d-47de-9cfb-729871ff524d
