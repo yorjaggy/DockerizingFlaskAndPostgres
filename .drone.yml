@@ -8,13 +8,22 @@ steps:
   - pwd
   - ls -l
   
+- name: docker-test
+  image: plugins/docker
+  commands:
+  - docker images
+  - docker ps
+  
 - name: build-push-docker
   image: plugins/docker
+  commands:
+  - docker images
+  - docker ps
   settings:
     #registry: i2thub.icesi.edu.co:5000
     context: ./flaskBaseImage
     dockerfile: ./flaskBaseImage/Dockerfile
-    repo: yorjaggy/flaskpostgress
+    repo: yorjaggy/flaskpostgress_2
     username: yorjaggy
     password: holamundo1
     tags:
