@@ -6,7 +6,7 @@ steps:
   image: alpine
   commands:
   - pwd
-  - ls -l
+  - ls -l /var/run/
   - apk add docker
   - docker ps
   - docker images
