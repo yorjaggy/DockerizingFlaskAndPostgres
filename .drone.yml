@@ -11,10 +11,12 @@ steps:
 - name: build-push-docker
   image: plugins/docker
   settings:
-    registry: i2thub.icesi.edu.co:5000
+    #registry: i2thub.icesi.edu.co:5000
     context: ./flaskBaseImage
     dockerfile: ./flaskBaseImage/Dockerfile
-    repo: python_flask_test
+    repo: yorjaggy/flaskpostgress
+    username: yorjaggy
+    password: holamundo1
     tags:
     - ${DRONE_COMMIT_BRANCH/\//-}
     - ${DRONE_COMMIT_BRANCH/\//-}-${DRONE_COMMIT_SHA:0:8}
