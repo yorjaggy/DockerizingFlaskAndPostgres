@@ -7,6 +7,9 @@ steps:
   commands:
   - pwd
   - ls -l
+  - apk add docker
+  - docker ps
+  - docker images
   
 - name: docker-test
   image: plugins/docker
